@@ -5,6 +5,7 @@
   Time: 오전 9:31
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -24,14 +25,14 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>--%>
             </div>
             <span>or use your email for registration</span>
-            <input type="text" placeholder="Name" />
-            <input type="loginid" placeholder="ID" />
-            <input type="password" placeholder="Password" />
-            <button>Sign Up</button>
+            <input type="text" name="name" placeholder="Name" />
+            <input type="text" name="loginid" placeholder="ID" />
+            <input type="password" name="password" placeholder="Password" />
+            <button type="submit">Sign Up</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="<c:url value="/default"/>" method="post">
             <h1>Sign in</h1>
             <div class="social-container">
 <%--                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -39,10 +40,10 @@
                 <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>--%>
             </div>
             <span>or use your account</span>
-            <input type="loginid" placeholder="Enter your ID" />
-            <input type="password" placeholder="Enter your password" />
+            <input type="text" name="loginid" placeholder="Enter your ID" />
+            <input type="password" name="password" placeholder="Enter your password" />
             <a href="#">Forgot your password?</a>
-            <button>Sign In</button>
+            <button type="submit">Sign In</button>
         </form>
     </div>
     <div class="overlay-container">
